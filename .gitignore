@@ -1,11 +1,34 @@
-/tmp
-/out-tsc
+# Dependencies
+node_modules/
 
-/node_modules
+# Build output
+/out-tsc
+/dist
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Yarn PnP
 /.pnp
 .pnp.js
 
-.vscode/*
+# Temp
+/tmp
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
