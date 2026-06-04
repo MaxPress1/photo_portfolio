@@ -1,0 +1,499 @@
+/* ============================================================
+   LIVSHUN PHOTO — Main Stylesheet
+   Premium minimal aesthetic, pastel beige palette
+   ============================================================ */
+
+/* ── CSS Custom Properties ── */
+:root {
+    --color-bg:          #fdfaf6;
+    --color-bg-soft:     #f7f1e9;
+    --color-bg-muted:    #ede4d8;
+    --color-border:      #e8ddd0;
+    --color-text:        #1a1a1a;
+    --color-text-muted:  #6b6560;
+    --color-text-light:  #a09890;
+    --color-text-faint:  #c4b8ae;
+    --color-accent:      #8b6f5e;
+    --color-dark-bg:     #1c1917;
+    --color-dark-border: #2d2926;
+    --color-dark-text:   #e8e0d8;
+    --color-wedding:     #92400e;
+
+    --font-serif:  'Cormorant Garamond', Georgia, serif;
+    --font-sans:   'Inter', system-ui, sans-serif;
+
+    --max-w-content: 1024px;
+    --max-w-text:    768px;
+    --max-w-narrow:  672px;
+
+    --spacing-section: 5rem;
+    --spacing-section-sm: 3rem;
+    --radius-sm: 2px;
+
+    --transition-base: 300ms ease;
+    --transition-slow: 700ms ease;
+    --transition-hero: 1000ms ease-out;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ── Typography helpers ── */
+.serif {
+    font-family: var(--font-serif);
+}
+
+/* ============================================================
+   HEADER / NAVIGATION
+   ============================================================ */
+.site-header {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-logo {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+    color: var(--color-text);
+}
+
+.site-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+}
+
+.site-nav a {
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+    transition: color var(--transition-base);
+}
+
+.site-nav a:hover {
+    color: var(--color-text);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+    max-width: var(--max-w-content);
+    margin: 0 auto;
+    padding: 2rem 1rem 0;
+}
+
+.hero__image-wrap {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    background-color: var(--color-bg-soft);
+}
+
+@media (min-width: 768px) {
+    .hero__image-wrap {
+        height: 85vh;
+    }
+}
+
+.hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(15%);
+    transition: transform var(--transition-hero);
+}
+
+.hero__image:hover {
+    transform: scale(1.05);
+}
+
+.hero__tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: 2rem;
+    letter-spacing: 0.05em;
+    padding: 0 1rem 2rem;
+}
+
+/* ============================================================
+   PRICING SECTION
+   ============================================================ */
+.pricing {
+    max-width: var(--max-w-content);
+    margin: 0 auto;
+    padding: var(--spacing-section) 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--color-text-light);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem 4rem;
+}
+
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Single pricing card ── */
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2.5rem;
+}
+
+.pricing-card--featured {
+    background-color: var(--color-bg-soft);
+    border-bottom: none;
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Photo above each card */
+.pricing-card__photo {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-color: var(--color-bg-muted);
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.pricing-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%);
+    transition: transform var(--transition-slow);
+}
+
+.pricing-card__photo img:hover {
+    transform: scale(1.04);
+}
+
+.pricing-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+}
+
+.pricing-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    flex-shrink: 0;
+}
+
+.pricing-card__price {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.pricing-card__subtitle {
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.pricing-card__note {
+    font-size: 0.68rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-wedding);
+    margin-bottom: 1rem;
+}
+
+.pricing-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.pricing-card__features li {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.5;
+}
+
+.pricing-card__features li::before {
+    content: '•';
+    color: var(--color-text-faint);
+    flex-shrink: 0;
+    margin-top: 0.05em;
+}
+
+.pricing-card__features .note-indent {
+    font-size: 0.72rem;
+    color: var(--color-text-light);
+    display: block;
+    padding-left: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.pricing-card__cert-desc {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.pricing-card__cert-price {
+    font-family: var(--font-serif);
+    font-size: 0.7rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-light);
+}
+
+strong.highlight {
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+/* ============================================================
+   TERMS SECTION
+   ============================================================ */
+.terms {
+    max-width: var(--max-w-narrow);
+    margin: 0 auto 5rem;
+    padding: 3.5rem 2rem;
+    background-color: var(--color-bg-soft);
+    border-radius: var(--radius-sm);
+}
+
+.terms__title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.terms__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.terms__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+}
+
+.terms__list li .icon {
+    color: var(--color-text-light);
+    font-size: 0.6rem;
+    flex-shrink: 0;
+    margin-top: 0.35em;
+}
+
+.terms__closing {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-text-light);
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* ============================================================
+   FOOTER / CTA
+   ============================================================ */
+.site-footer {
+    padding: 6rem 1.5rem;
+    text-align: center;
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+    border-top: 1px solid var(--color-dark-border);
+}
+
+.footer__headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.footer__sub {
+    font-size: 0.65rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #7a7068;
+    margin-bottom: 2.5rem;
+}
+
+.footer__cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid #5a524a;
+    color: var(--color-dark-text);
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                border-color var(--transition-base);
+}
+
+.footer__cta:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border-color: var(--color-bg);
+}
+
+.footer__copy {
+    font-size: 0.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #4a4440;
+    margin-top: 7rem;
+}
+
+/* ============================================================
+   MOBILE ADAPTATIONS  (max-width: 640px)
+   ============================================================ */
+@media (max-width: 640px) {
+    .site-header {
+        padding: 2rem 1rem;
+    }
+
+    .site-nav {
+        gap: 0.4rem 1.25rem;
+    }
+
+    .site-nav a {
+        font-size: 0.6rem;
+    }
+
+    .hero {
+        padding: 1.5rem 0.75rem 0;
+    }
+
+    .hero__image-wrap {
+        height: 55vh;
+    }
+
+    .pricing {
+        padding: var(--spacing-section-sm) 1rem;
+    }
+
+    .section-title {
+        margin-bottom: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .pricing-card__photo {
+        height: 220px;
+    }
+
+    .pricing-card__title {
+        font-size: 1.3rem;
+    }
+
+    .terms {
+        margin: 0 1rem 3rem;
+        padding: 2.5rem 1.25rem;
+    }
+
+    .site-footer {
+        padding: 4rem 1.25rem;
+    }
+
+    .footer__copy {
+        margin-top: 4rem;
+    }
+}
