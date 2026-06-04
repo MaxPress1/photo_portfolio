@@ -5,18 +5,18 @@
 
 /* ── CSS Custom Properties ── */
 :root {
-    --color-bg:          #fdfaf6;
-    --color-bg-soft:     #f7f1e9;
-    --color-bg-muted:    #ede4d8;
-    --color-border:      #e8ddd0;
+    --color-bg:          #f5ede0;
+    --color-bg-soft:     #ecddd0;
+    --color-bg-muted:    #dfc9b5;
+    --color-border:      #d4bfaa;
     --color-text:        #1a1a1a;
     --color-text-muted:  #6b6560;
     --color-text-light:  #a09890;
     --color-text-faint:  #c4b8ae;
-    --color-accent:      #8b6f5e;
+    --color-accent:      #7a5c48;
     --color-dark-bg:     #1c1917;
     --color-dark-border: #2d2926;
-    --color-dark-text:   #e8e0d8;
+    --color-dark-text:   #f0e6d8;
     --color-wedding:     #92400e;
 
     --font-serif:  'Cormorant Garamond', Georgia, serif;
